@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Entry from './Structure/Entry';
+import Template from './Structure/Template';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Entry />
+    <Template/>
   </React.StrictMode>,
   document.getElementById('root')
 );

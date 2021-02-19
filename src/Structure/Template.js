@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
 import "../Styles/Main.css";
 
+
+
 export default function App() {
     const API_KEY = "k_6nhg5ps6";
     const [movies, setMovies] = useState([]);
@@ -38,7 +40,7 @@ export default function App() {
 
     return (
         <div className="wrapper">
-            <form onSubmit={getSearch} className="search-name">
+            <form onSubmit={getSearch} className="search-form">
                 <input className="search-bar" type="text" value={search} onChange={updateSearch} />
                 <button className="search-button" type="submit">Search</button>
             </form>

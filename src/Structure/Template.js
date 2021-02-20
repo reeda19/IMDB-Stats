@@ -38,6 +38,10 @@ export default function App() {
 
 
 
+
+
+
+
     return (
         <div className="wrapper">
             <form onSubmit={getSearch} className="search-form">
@@ -48,6 +52,7 @@ export default function App() {
                 {movies.map(movie => (
                     <Movie
                     key={movie.id}
+                    id = {movie.id}
                     title={movie.title}
                     image={movie.image}
                     description={movie.description}

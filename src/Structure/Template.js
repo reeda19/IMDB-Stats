@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Movie from './Movie';
 import "../Styles/Main.css";
+import API_KEY from '../secrets.js'
 
 
 
 export default function App() {
-    const API_KEY = "k_6nhg5ps6";
+    
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState('');
     const [query, setQuery] = useState('chicken little');

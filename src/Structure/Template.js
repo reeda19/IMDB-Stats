@@ -18,6 +18,7 @@ export default function App() {
 
 
     const getMovies = async () => {
+        
         const response = await fetch(`https://imdb-api.com/en/API/SearchMovie/${API_KEY}/{${query}}`);
         const data = await response.json();
         console.log(data.results);
@@ -56,11 +57,7 @@ export default function App() {
                     id = {movie.id}
                     title={movie.title}
                     image={movie.image}
-                    description={movie.description}
-
-
-
-                    />
+                    description={movie.description}/>
                 ))}
             </div>
         </div>

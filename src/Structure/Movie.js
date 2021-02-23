@@ -39,13 +39,15 @@ const Movie = ({ id, title, image, description }) => {
 
     else {
         return (
-            <div className={style.movie} onClick={movieDetails}>
+            <div className={style.details} onClick={movieDetails}>
                 <h1>{title}</h1>
-                <ul>
-                    <li>Awards: {details.awards}</li>
-                    <li>IMDB Rating: {details.imDbRating}</li>
-                    <li>Gross: {details.awards}</li>
-                </ul>
+                <div>
+                    <ul>
+                        <li>Awards: {details.awards}</li>
+                        <li>IMDB Rating: {details.imDbRating}</li>
+                        {/* <li>Gross: {details.boxOffice.cumulativeWorldwideGross}</li> */}
+                    </ul>
+                </div>
 
             </div>
         );

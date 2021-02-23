@@ -5,18 +5,24 @@ import API_KEY from '../secrets.js'
 const Movie = ({ id, title, image, description }) => {
     const [details, setDetails] = useState([]);
     const [clicked, setClick] = useState(false)
+    const [details_requested, setDetailsRequested] = useState(false)
 
 
     const getDetails = async () => {
-        const response = await fetch(`https://imdb-api.com/en/API/Title/${API_KEY}/${id}`)
-        const data = await response.json();
-        setDetails(data);
-        console.log(data);
+        if (!details_requested) {
+            const response = await fetch(`https://imdb-api.com/en/API/Title/${API_KEY}/${id}`)
+            const data = await response.json();
+            setDetails(data);
+            console.log(data);
+        }
     }
     const movieDetails = e => {
         e.preventDefault();
-        setClick(!clicked)
+        setClick(!clicked);
+        setDetailsRequested(true)
+
         getDetails();
+
     };
 
     if (!clicked) {

@@ -4,7 +4,7 @@ import API_KEY from '../secrets.js'
 
 const Movie = ({ id, title, image, description }) => {
     const [details, setDetails] = useState([]);
-    const [clicked, setClick] = useState(false)
+    const [hovered, setHover] = useState(false)
     const [details_requested, setDetailsRequested] = useState(false)
 
 
@@ -18,16 +18,22 @@ const Movie = ({ id, title, image, description }) => {
     }
     const movieDetails = e => {
         e.preventDefault();
-        setClick(!clicked);
+        console.log("mouse enter");
+        setHover(true);
         setDetailsRequested(true)
-
         getDetails();
 
     };
 
-    if (!clicked) {
+    const mouseLeave = e => {
+        e.preventDefault();
+        setHover(false);
+        console.log("mouse leave")
+    }
+
+    if (!hovered) {
         return (
-            <div className={style.movie} onClick={movieDetails}>
+            <div className={style.movie} onMouseOver={movieDetails}>
                 <h1>{title}</h1>
                 <div>
                     <p>{description}</p>
@@ -39,7 +45,7 @@ const Movie = ({ id, title, image, description }) => {
 
     else {
         return (
-            <div className={style.details} onClick={movieDetails}>
+            <div className={style.details} onMouseLeave={mouseLeave}>
                 <h1>{title}</h1>
                 <div>
                     <ul>

@@ -51,7 +51,11 @@ const Movie = ({ id, title, image, description }) => {
                     <ul>
                         <li>Awards: {details.awards}</li>
                         <li>IMDB Rating: {details.imDbRating}</li>
-                        {/* <li>Gross: {details.boxOffice.cumulativeWorldwideGross}</li> */}
+                        {details.boxOffice ?
+                        <li>Gross: {details.boxOffice.cumulativeWorldwideGross}</li>
+                        :
+                        <li>Gross Unavailable</li>
+                        }
                     </ul>
                 </div>
 

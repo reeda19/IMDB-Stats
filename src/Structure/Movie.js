@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from './movie.module.css';
-import API_KEY from '../secrets.js'
+import API_KEY from '../secrets.js';
+import Detail from './Detail';
 
 const Movie = ({ id, title, image, description }) => {
     const [details, setDetails] = useState([]);
@@ -18,7 +19,6 @@ const Movie = ({ id, title, image, description }) => {
     }
     const movieDetails = e => {
         e.preventDefault();
-        console.log("mouse enter");
         setHover(true);
         setDetailsRequested(true)
         getDetails();
@@ -28,7 +28,6 @@ const Movie = ({ id, title, image, description }) => {
     const mouseLeave = e => {
         e.preventDefault();
         setHover(false);
-        console.log("mouse leave")
     }
 
     if (!hovered) {
@@ -52,9 +51,13 @@ const Movie = ({ id, title, image, description }) => {
                         <li>Awards: {details.awards}</li>
                         <li>IMDB Rating: {details.imDbRating}</li>
                         {details.boxOffice ?
-                        <li>Gross: {details.boxOffice.cumulativeWorldwideGross}</li>
+                        <Detail
+                            name="Gross"
+                            data={details}
+                            indices={["boxOffice", "cumulativeWorldwideGross"]}
+                        />
                         :
-                        <li>Gross Unavailable</li>
+                        <></>
                         }
                     </ul>
                 </div>

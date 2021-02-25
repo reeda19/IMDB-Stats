@@ -48,16 +48,24 @@ const Movie = ({ id, title, image, description }) => {
                 <h1>{title}</h1>
                 <div>
                     <ul>
-                        <li>Awards: {details.awards}</li>
-                        <li>IMDB Rating: {details.imDbRating}</li>
-                        {details.boxOffice ?
+
                         <Detail
-                            name="Gross"
+                            name="Awards"
                             data={details}
-                            indices={["boxOffice", "cumulativeWorldwideGross"]}
-                        />
-                        :
-                        <></>
+                            indices={["awards"]} />
+                        <Detail
+                            name="imDb Rating"
+                            data={details}
+                            indices={["imDbRating"]} />
+
+                        {details.boxOffice ?
+                            <Detail
+                                name="Gross"
+                                data={details}
+                                indices={["boxOffice", "cumulativeWorldwideGross"]}
+                            />
+                            :
+                            <></>
                         }
                     </ul>
                 </div>

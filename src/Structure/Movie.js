@@ -45,7 +45,7 @@ const Movie = ({ id, title, image, description }) => {
     else {
         return (
             <div className={style.details} onMouseLeave={mouseLeave}>
-                <h1>{title}</h1>
+                <h1 style={{textAlign: "center"}}>{title}</h1>
                 <div>
                     <ul>
 

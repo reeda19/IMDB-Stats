@@ -8,7 +8,7 @@
     background: white;
     align-items: center;
     width: 20%;
-    height: 23rem;
+    height: 24rem;
     text-align: center;
     transition: 0.25s;
 }
@@ -27,7 +27,7 @@
     background: rgb(127, 214, 236);
     align-items: center;
     width: 20%;
-    height: 23rem;
+    height: 24rem;
     cursor: pointer;
     transition: 0.25s;
 

@@ -33,7 +33,7 @@ const Movie = ({ id, title, image, description }) => {
     if (!hovered) {
         return (
             <div className={style.movie} onMouseOver={movieDetails}>
-                <h1>{title.length<35 ? title : title.substring(0,35)+"..."}</h1>
+                <h1 style={{paddingTop: "10px",paddingLeft: "10px", paddingRight: "10px"}}>{title.length<35 ? title : title.substring(0,35)+"..."}</h1>
                 <div>
                     <p>{description}</p>
                 </div>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import style from './movie.module.css';
-import API_KEY from '../secrets.js';
 import Detail from './Detail';
 
 const Movie = ({ id, title, image, description }) => {
+    const API_KEY="pk_edxfokgru52hn7uqu";
     const [details, setDetails] = useState([]);
     const [hovered, setHover] = useState(false)
     const [details_requested, setDetailsRequested] = useState(false)
